@@ -2,7 +2,7 @@
 source /usr/share/modules/init/bash
 module load ci
 echo ""
-cd ${WORKSPACE}/${NAME-$VERSION}
+cd ${WORKSPACE}/${NAME}-${VERSION}
 # there is no make check for
 
 echo $?
