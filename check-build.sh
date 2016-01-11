@@ -1,8 +1,11 @@
-#!/bin/bash
-source /usr/share/modules/init/bash
+#!/bin/bash -e
+. /etc/profile.d/modules.sh
 module load ci
+module add zlib
+module add bzlib
+module add libpng
 echo ""
-cd ${WORKSPACE}/${NAME}-${VERSION}
+cd ${WORKSPACE}/${NAME}-${VERSION}/build-${BUILD_NUMBER}
 # there is no make check for
 
 echo $?
