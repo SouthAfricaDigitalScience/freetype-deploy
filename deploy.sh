@@ -11,7 +11,7 @@ SOURCE_FILE=${NAME}-${VERSION}.tar.gz
 
 module load ci
 module add zlib
-module add bzlib
+module add bzip2
 module add libpng
 
 echo "tests have passed, now deploying."
@@ -25,8 +25,8 @@ rm -rf *
 --with-png=yes
 echo "Setting compiler flags"
 export LDFLAGS="-L${ZLIB_DIR}/lib -L${BZLIB_DIR}/lib"
-export CFLAGS="-I${ZLIB_DIR}/include -I${BZIP2_DIR}/include"
-export CPPFLAGS="-I${ZLIB_DIR}/include -I${BZIP2_DIR}/include"
+export CFLAGS="-I${ZLIB_DIR}/include -I${BZLIB_DIR}/include"
+export CPPFLAGS="-I${ZLIB_DIR}/include -I${BZLIB_DIR}/include"
 ../configure  \
 --prefix=${SOFT_DIR} \
 --with-zlib=yes \
@@ -62,3 +62,5 @@ MODULE_FILE
 
 mkdir -p ${LIBRARIES_MODULES}/${NAME}
 cp modules/${VERSION} ${LIBRARIES_MODULES}/${NAME}
+
+module avail bzip2

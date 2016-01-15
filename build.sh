@@ -11,7 +11,7 @@ SOURCE_FILE=${NAME}-${VERSION}.tar.gz
 
 module load ci
 module add zlib
-module add bzlib
+module add bzip2
 module add libpng
 
 echo "REPO_DIR is "
@@ -44,13 +44,13 @@ elif [ -e ${SRC_DIR}/${SOURCE_FILE}.lock ] ; then
 else
   echo "continuing from previous builds, using source at " ${SRC_DIR}/${SOURCE_FILE}
 fi
-mkdir -p ${WORKSPACE}/${NAME}-${VERSION}/build-${BUILD_VERSION}
+mkdir -p ${WORKSPACE}/${NAME}-${VERSION}/build-${BUILD_NUMBER}
 tar -xvzf ${SRC_DIR}/${SOURCE_FILE} -C ${WORKSPACE} --skip-old-files
-cd ${WORKSPACE}/${NAME}-${VERSION}/build-${BUILD_VERSION}
+cd ${WORKSPACE}/${NAME}-${VERSION}/build-${BUILD_NUMBER}
 echo "Setting compiler flags"
 export LDFLAGS="-L${ZLIB_DIR}/lib -L${BZLIB_DIR}/lib"
-export CFLAGS="-I${ZLIB_DIR}/include -I${BZIP2_DIR}/include"
-export CPPFLAGS="-I${ZLIB_DIR}/include -I${BZIP2_DIR}/include"
+export CFLAGS="-I${ZLIB_DIR}/include -I${BZLIB_DIR}/include"
+export CPPFLAGS="-I${ZLIB_DIR}/include -I${BLIB_DIR}/include"
 ../configure  \
 --prefix=${SOFT_DIR} \
 --with-zlib=yes \

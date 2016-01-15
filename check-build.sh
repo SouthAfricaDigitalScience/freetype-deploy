@@ -2,7 +2,7 @@
 . /etc/profile.d/modules.sh
 module load ci
 module add zlib
-module add bzlib
+module add bzip2
 module add libpng
 echo ""
 cd ${WORKSPACE}/${NAME}-${VERSION}/build-${BUILD_NUMBER}
