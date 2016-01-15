@@ -9,7 +9,7 @@ SOURCE_FILE=${NAME}-${VERSION}.tar.gz
 #  libpng:        no
 #  harfbuzz:      no
 
-module load ci
+module load deploy
 module add zlib
 module add bzip2
 module add libpng
@@ -63,4 +63,4 @@ MODULE_FILE
 mkdir -p ${LIBRARIES_MODULES}/${NAME}
 cp modules/${VERSION} ${LIBRARIES_MODULES}/${NAME}
 
-module avail bzip2
+module avail freetype
