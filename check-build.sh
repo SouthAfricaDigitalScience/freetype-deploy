@@ -25,10 +25,10 @@ proc ModulesHelp { } {
 
 module-whatis   "$NAME $VERSION."
 setenv       FREETYPE_VERSION       $VERSION
-setenv       FREETYPE_DIR           /data/ci-build/$::env(SITE)/$::env(OS)/$::env(ARCH)/$NAME/$VERSION
-prepend-path PATH           $::env(FREETYPE_DIR)/bin
+setenv       FREETYPE_DIR                 /data/ci-build/$::env(SITE)/$::env(OS)/$::env(ARCH)/$NAME/$VERSION
+prepend-path PATH                            $::env(FREETYPE_DIR)/bin
 prepend-path LD_LIBRARY_PATH   $::env(FREETYPE_DIR)/lib
-prepend-path LD_LIBRARY_DIR   $::env(FREETYPE_DIR)/include
+prepend-path LD_LIBRARY_DIR       $::env(FREETYPE_DIR)/include
 prepend-path GCC_INCLUDE_DIR   $::env(FREETYPE_DIR)/include
 MODULE_FILE
 ) > modules/$VERSION

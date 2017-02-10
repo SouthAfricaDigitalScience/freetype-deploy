@@ -50,13 +50,13 @@ proc ModulesHelp { } {
 }
 
 module-whatis   "$NAME $VERSION."
-setenv       FREETYPE_VERSION       $VERSION
-setenv       FREETYPE_DIR           $::env(CVMFS_DIR)/$::env(SITE)/$::env(OS)/$::env(ARCH)/$NAME/$VERSION
+setenv       FREETYPE_VERSION      $VERSION
+setenv       FREETYPE_DIR                $::env(CVMFS_DIR)/$::env(SITE)/$::env(OS)/$::env(ARCH)/$NAME/$VERSION
 prepend-path LD_LIBRARY_PATH   $::env(FREETYPE_DIR)/lib
-prepend-path PATH              $::env(FREETYPE_DIR)/bin
+prepend-path PATH                           $::env(FREETYPE_DIR)/bin
 prepend-path GCC_INCLUDE_DIR   $::env(FREETYPE_DIR)/include
-prepend-path CFLAGS            "-I$::env(FREETYPE_DIR)/include"
-prepend-path LDFLAGS           "-L$::env(FREETYPE_DIR)/include"
+prepend-path CFLAGS                       "-I$::env(FREETYPE_DIR)/include"
+prepend-path LDFLAGS                    "-L$::env(FREETYPE_DIR)/include"
 MODULE_FILE
 ) > modules/$VERSION
 

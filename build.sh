@@ -50,7 +50,7 @@ cd ${WORKSPACE}/${NAME}-${VERSION}/build-${BUILD_NUMBER}
 echo "Setting compiler flags"
 export LDFLAGS="-L${ZLIB_DIR}/lib -L${BZLIB_DIR}/lib"
 export CFLAGS="-I${ZLIB_DIR}/include -I${BZLIB_DIR}/include"
-export CPPFLAGS="-I${ZLIB_DIR}/include -I${BLIB_DIR}/include"
+export CPPFLAGS="-I${ZLIB_DIR}/include -I${BZLIB_DIR}/include"
 ../configure  \
 --prefix=${SOFT_DIR} \
 --with-zlib=yes \
