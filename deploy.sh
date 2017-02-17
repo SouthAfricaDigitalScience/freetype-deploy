@@ -9,7 +9,7 @@ SOURCE_FILE=${NAME}-${VERSION}.tar.gz
 #  libpng:        no
 #  harfbuzz:      no
 
-module load deploy
+module add deploy
 module add zlib
 module add bzip2
 module add libpng
@@ -18,13 +18,8 @@ echo "tests have passed, now deploying."
 cd ${WORKSPACE}/${NAME}-${VERSION}/build-${BUILD_NUMBER}
 # clean out previous configuration
 rm -rf *
-../configure  \
---prefix=${SOFT_DIR} \
---with-zlib=yes \
---with-bzip2=yes \
---with-png=yes
 echo "Setting compiler flags"
-export LDFLAGS="-L${ZLIB_DIR}/lib -L${BZLIB_DIR}/lib"
+export LDFLAGS="-L${ZLIB_DIR}/lib -L${BZLIB_DIR}/lib -lz -lbz2"
 export CFLAGS="-I${ZLIB_DIR}/include -I${BZLIB_DIR}/include"
 export CPPFLAGS="-I${ZLIB_DIR}/include -I${BZLIB_DIR}/include"
 ../configure  \
@@ -32,9 +27,7 @@ export CPPFLAGS="-I${ZLIB_DIR}/include -I${BZLIB_DIR}/include"
 --with-zlib=yes \
 --with-bzip2=yes \
 --with-png=yes
-
 make
-
 make install
 
 mkdir -p modules
