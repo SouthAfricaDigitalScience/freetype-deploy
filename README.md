@@ -20,9 +20,10 @@ We build :
 # Configuration
 
 ```
-export LDFLAGS="-L${ZLIB_DIR}/lib -L${BZLIB_DIR}/lib -lz -lbz2"
-export CFLAGS="-I${ZLIB_DIR}/include -I${BZLIB_DIR}/include"
-export CPPFLAGS="-I${ZLIB_DIR}/include -I${BZLIB_DIR}/include"
+export ZLIB_LIBS="-L${ZLIB_DIR}/lib -lz"
+export ZLIB_CFLAGS="-I${ZLIB_DIR}/include"
+export BZIP2_LIBS="-L${BZIP_DIR}/lib -lbz2"
+export BZIP2_CFLAGS="-I${BZIP_DIR}/include"
 ../configure  \
 --prefix=${SOFT_DIR} \
 --with-zlib=yes \
