@@ -48,7 +48,7 @@ mkdir -p ${WORKSPACE}/${NAME}-${VERSION}/build-${BUILD_NUMBER}
 tar -xvzf ${SRC_DIR}/${SOURCE_FILE} -C ${WORKSPACE} --skip-old-files
 cd ${WORKSPACE}/${NAME}-${VERSION}/build-${BUILD_NUMBER}
 echo "Setting compiler flags"
-export LDFLAGS="-L${ZLIB_DIR}/lib -L${BZLIB_DIR}/lib"
+export LDFLAGS="-L${ZLIB_DIR}/lib -L${BZLIB_DIR}/lib -lz -lbz2"
 export CFLAGS="-I${ZLIB_DIR}/include -I${BZLIB_DIR}/include"
 export CPPFLAGS="-I${ZLIB_DIR}/include -I${BZLIB_DIR}/include"
 ../configure  \
