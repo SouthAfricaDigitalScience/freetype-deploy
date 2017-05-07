@@ -15,7 +15,7 @@
 
 . /etc/profile.d/modules.sh
 module load ci
-module add zlib
+#module add zlib
 module add bzip2
 module add libpng
 echo ""
