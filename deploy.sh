@@ -34,10 +34,8 @@ cd ${WORKSPACE}/${NAME}-${VERSION}/build-${BUILD_NUMBER}
 # clean out previous configuration
 rm -rf *
 echo "Setting compiler flags"
-export ZLIB_LIBS="-L${ZLIB_DIR}/lib -lz"
-export ZLIB_CFLAGS="-I${ZLIB_DIR}/include"
-export BZIP2_LIBRARIES="-L${BZLIB_DIR}/lib -lbz2"
-export BZIP2_INCLUDE_DIR="-I${BZLIB_DIR}/include"
+export BZIP2_LIBS="-L${BZLIB_DIR}/lib -lbz2"
+export BZIP2_CFLAGS="-I${BZLIB_DIR}/include"
 
 ../configure  \
 --prefix=${SOFT_DIR} \
