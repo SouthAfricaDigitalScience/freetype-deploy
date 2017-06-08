@@ -24,7 +24,6 @@ SOURCE_FILE=${NAME}-${VERSION}.tar.gz
 #  harfbuzz:      no
 
 module add ci
-module add zlib
 module add bzip2
 module add libpng
 module add cmake
@@ -55,8 +54,8 @@ tar -xvzf ${SRC_DIR}/${SOURCE_FILE} -C ${WORKSPACE} --skip-old-files
 cd ${WORKSPACE}/${NAME}-${VERSION}/build-${BUILD_NUMBER}
 # export ZLIB_LIBS="-L${ZLIB_DIR}/lib -lz"
 # export ZLIB_CFLAGS="-I${ZLIB_DIR}/include"
-# export BZIP2_LIBS="-L${BZLIB_DIR}/lib -lbz2"
-# export BZIP2_CFLAGS="-I${BZLIB_DIR}/include"
+export BZIP2_LIBS="-L${BZLIB_DIR}/lib -lbz2"
+export BZIP2_CFLAGS="-I${BZLIB_DIR}/include"
 
 ../configure  \
 --prefix=${SOFT_DIR} \
