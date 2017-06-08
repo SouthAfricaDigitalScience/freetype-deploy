@@ -18,6 +18,7 @@ module load ci
 #module add zlib
 module add bzip2
 module add libpng
+module add cmake
 echo ""
 cd ${WORKSPACE}/${NAME}-${VERSION}/build-${BUILD_NUMBER}
 # there is no make check for

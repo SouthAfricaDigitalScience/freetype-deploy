@@ -27,6 +27,7 @@ module add deploy
 #module add zlib
 module add bzip2
 module add libpng
+module add cmake
 
 echo "tests have passed, now deploying."
 cd ${WORKSPACE}/${NAME}-${VERSION}/build-${BUILD_NUMBER}

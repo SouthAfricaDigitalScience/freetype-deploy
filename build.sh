@@ -23,10 +23,10 @@ SOURCE_FILE=${NAME}-${VERSION}.tar.gz
 #  libpng:        no
 #  harfbuzz:      no
 
-module load ci
-#module add zlib
-# module add bzip2
-# module add libpng
+module add ci
+module add zlib
+module add bzip2
+module add libpng
 module add cmake
 
 mkdir -p ${WORKSPACE}
