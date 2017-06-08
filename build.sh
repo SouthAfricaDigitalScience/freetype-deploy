@@ -25,17 +25,9 @@ SOURCE_FILE=${NAME}-${VERSION}.tar.gz
 
 module load ci
 #module add zlib
-module add bzip2
-module add libpng
-
-echo "REPO_DIR is "
-echo $REPO_DIR
-echo "SRC_DIR is "
-echo $SRC_DIR
-echo "WORKSPACE is "
-echo $WORKSPACE
-echo "SOFT_DIR is"
-echo $SOFT_DIR
+# module add bzip2
+# module add libpng
+module add cmake
 
 mkdir -p ${WORKSPACE}
 mkdir -p ${SRC_DIR}
